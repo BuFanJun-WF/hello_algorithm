@@ -64,6 +64,7 @@ public class Solution {
         }
     }
 
+    /** * 自底部向顶进行堆化 */
     public void siftUp(int[] heap, int index) {
         int n = index;
         // 自底部向顶进行堆化
