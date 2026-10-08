@@ -6,6 +6,7 @@ import node.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * 打印工具类
@@ -89,4 +90,33 @@ public class PrintUtil {
         showTrunks(p.prev);
         System.out.print(p.str);
     }
+
+    /* 打印矩阵（Array） */
+    public static <T> void printMatrix(T[][] matrix) {
+        System.out.println("[");
+        for (T[] row : matrix) {
+            System.out.println("  " + row + ",");
+        }
+        System.out.println("]");
+    }
+
+    /* 打印矩阵（List） */
+    public static <T> void printMatrix(List<List<T>> matrix) {
+        System.out.println("[");
+        for (List<T> row : matrix) {
+            System.out.println("  " + row + ",");
+        }
+        System.out.println("]");
+    }
+
+    /* 打印堆（优先队列） */
+    public static void printHeap(Queue<Integer> queue) {
+        List<Integer> list = new ArrayList<>(queue);
+        System.out.print("堆的数组表示：");
+        System.out.println(list);
+        System.out.println("堆的树状表示：");
+        TreeNode root = TreeNode.listToTree(list);
+        printTree(root);
+    }
+
 }
